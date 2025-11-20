@@ -4,6 +4,7 @@ import br.com.fiap.GlobalSolutionJava.domain.User;
 import br.com.fiap.GlobalSolutionJava.domain.dto.request.CreateUserDTO;
 import br.com.fiap.GlobalSolutionJava.repository.UserRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ public class UserController {
 
     @Transactional
     @PostMapping("/users")
-    public ResponseEntity<Void> newUser(@RequestBody  CreateUserDTO dto) {
+    public ResponseEntity<Void> newUser(@Valid @RequestBody  CreateUserDTO dto) {
 
         var userDb = userRepository.findByUsuario(dto.usuario());
 

@@ -4,6 +4,7 @@ import br.com.fiap.GlobalSolutionJava.domain.dto.request.LoginRequest;
 import br.com.fiap.GlobalSolutionJava.domain.dto.response.LoginResponse;
 import br.com.fiap.GlobalSolutionJava.exceptions.InvalidCredentialsException;
 import br.com.fiap.GlobalSolutionJava.repository.UserRepository;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +29,7 @@ public class TokenController {
     private final BCryptPasswordEncoder passwordEncoder;
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest) {
         var user = userRepository.findByUsuario(loginRequest.usuario());
 
         if (user.isEmpty() || !user.get().isLoginCorrect(loginRequest, passwordEncoder)) {
