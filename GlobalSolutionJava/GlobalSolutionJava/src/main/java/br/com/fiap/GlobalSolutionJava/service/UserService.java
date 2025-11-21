@@ -3,9 +3,9 @@ package br.com.fiap.GlobalSolutionJava.service;
 import br.com.fiap.GlobalSolutionJava.domain.User;
 import br.com.fiap.GlobalSolutionJava.dto.message.EnderecoUsuarioMessage;
 import br.com.fiap.GlobalSolutionJava.dto.request.UpdateUser;
+import br.com.fiap.GlobalSolutionJava.exceptions.UserNotFoundException;
 import br.com.fiap.GlobalSolutionJava.messaging.rabbit.RabbitProducer;
 import br.com.fiap.GlobalSolutionJava.repository.UserRepository;
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.context.MessageSource;
@@ -50,8 +50,7 @@ public class UserService {
     }
 
     public User getById(String id, Locale locale) {
-        String message = messageSource.getMessage("user.id.notfound", null, locale);
-        return userRepository.findById(id).orElseThrow(() -> new EntityNotFoundException(message));
+        return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException());
     }
 
     @Transactional

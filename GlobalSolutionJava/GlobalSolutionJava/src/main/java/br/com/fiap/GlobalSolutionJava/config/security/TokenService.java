@@ -1,6 +1,8 @@
 package br.com.fiap.GlobalSolutionJava.config.security;
 
 import br.com.fiap.GlobalSolutionJava.domain.User;
+import br.com.fiap.GlobalSolutionJava.exceptions.MissingTokenException;
+import br.com.fiap.GlobalSolutionJava.exceptions.TokenErrorGenerator;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
@@ -27,7 +29,7 @@ public class TokenService {
                     .withExpiresAt(dataExpiracao())
                     .sign(algorithm);
         } catch (JWTCreationException exception){
-            throw new RuntimeException("erro ao gerar token");
+            throw new TokenErrorGenerator();
         }
     }
 
@@ -41,7 +43,7 @@ public class TokenService {
                     .getSubject();
 
         } catch (JWTVerificationException exception){
-            throw new RuntimeException("token invalido");
+            throw new MissingTokenException();
         }
     }
 

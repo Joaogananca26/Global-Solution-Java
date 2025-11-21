@@ -1,5 +1,6 @@
 package br.com.fiap.GlobalSolutionJava.service;
 
+import br.com.fiap.GlobalSolutionJava.exceptions.UserNotFoundException;
 import br.com.fiap.GlobalSolutionJava.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,9 +15,9 @@ public class AuthService implements UserDetailsService {
     private UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UserNotFoundException {
         return userRepository.findByEmailUsuario(username)
-                .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado: " + username));
+                .orElseThrow(() -> new UserNotFoundException());
     }
 
 }
