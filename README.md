@@ -115,7 +115,7 @@ Para baixar a imagem do RabbitMq
 Rode o projeto.
 
 INTEGRANTES DO GRUPO: 
-João Henrique Murilla Gananca - 556405
-Vitor Hugo da Silva - 558961
-Brendon de Paula Brasil - 559196
+- João Henrique Murilla Gananca - 556405
+- Vitor Hugo da Silva - 558961
+- Brendon de Paula Brasil - 559196
 
