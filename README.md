@@ -92,19 +92,19 @@ https://global-solution-java-e-iot.onrender.com/
 
 Para matéria de Java: 
 Rotas disponíveis:
-https://global-solution-java-e-iot.onrender.com/users (Método POST): Criação do usuário.
-https://global-solution-java-e-iot.onrender.com/login (Método POST): Pegar o token do usuário.
-https://global-solution-java-e-iot.onrender.com/users (Método GET): Listar os usuários.
-https://global-solution-java-e-iot.onrender.com/users/{idUsuario} (Método GET): Listar usuário por ID.
-https://global-solution-java-e-iot.onrender.com/users/{idUsuario} (Método PUT): Atualização de atributos parciais do usuário.
+- https://global-solution-java-e-iot.onrender.com/users (Método POST): Criação do usuário.
+- https://global-solution-java-e-iot.onrender.com/login (Método POST): Pegar o token do usuário.
+- https://global-solution-java-e-iot.onrender.com/users (Método GET): Listar os usuários.
+- https://global-solution-java-e-iot.onrender.com/users/{idUsuario} (Método GET): Listar usuário por ID.
+- https://global-solution-java-e-iot.onrender.com/users/{idUsuario} (Método PUT): Atualização de atributos parciais do usuário.
 
 
 Para matéria de IOT:
 Rotas disponíveis 
 
 Para rodar o projeto local: 
-https://global-solution-java-e-iot.onrender.com/users/{idUsuario}/career (Método POST): Geração da profissão com base em 10 perguntas respondidas pelo usuário.
-https://global-solution-java-e-iot.onrender.com/users/{idUsuario}/career (Método GET): Para pegar a profissão do usuário
+- https://global-solution-java-e-iot.onrender.com/users/{idUsuario}/career (Método POST): Geração da profissão com base em 10 perguntas respondidas pelo usuário.
+- https://global-solution-java-e-iot.onrender.com/users/{idUsuario}/career (Método GET): Para pegar a profissão do usuário
 
 Inicie o docker
 
@@ -113,3 +113,9 @@ No terminal do projeto dentro de Global-Solution-Java-E-IOT/GlobalSolutionJava/G
 Para baixar a imagem do RabbitMq
 
 Rode o projeto.
+
+INTEGRANTES DO GRUPO: 
+João Henrique Murilla Gananca - 556405
+Vitor Hugo da Silva - 558961
+Brendon de Paula Brasil - 559196
+
